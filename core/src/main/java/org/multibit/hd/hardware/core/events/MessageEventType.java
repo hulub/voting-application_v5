@@ -206,10 +206,18 @@ public enum MessageEventType {
    * Device response. Provide the signature for the message.
    */
   MESSAGE_SIGNATURE,
+  /* Ring Sign MEssage */
+  /**
+   * Device response. Provide the ring signature for the message.
+   */
+  MESSAGE_RING_SIGNATURE,
   /**
    * Client request. Device should verify message using given co-ordinates.
    */
   VERIFY_MESSAGE,
+  
+  // Public Key 65
+  PUBLIC_KEY_65,
 
   // Message encryption
   /**

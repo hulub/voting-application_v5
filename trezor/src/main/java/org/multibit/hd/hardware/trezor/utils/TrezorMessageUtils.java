@@ -220,6 +220,16 @@ public final class TrezorMessageUtils {
           messageEventType = MessageEventType.MESSAGE_SIGNATURE;
           hardwareWalletMessage = TrezorMessageAdapter.adaptMessageSignature((TrezorMessage.MessageSignature) message);
           break;
+        case MessageType_PublicKey65:
+        	message = TrezorMessage.PublicKey65.parseFrom(buffer);
+        	messageEventType = MessageEventType.PUBLIC_KEY_65;
+        	hardwareWalletMessage = TrezorMessageAdapter.adaptPublicKey65((TrezorMessage.PublicKey65) message);
+        	break;
+        case MessageType_MessageRingSignature:
+        	message = TrezorMessage.MessageRingSignature.parseFrom(buffer);
+        	messageEventType = MessageEventType.MESSAGE_RING_SIGNATURE;
+        	hardwareWalletMessage = TrezorMessageAdapter.adaptMessageRingSignature((TrezorMessage.MessageRingSignature) message);
+        	break;
         case MessageType_EncryptMessage:
           message = TrezorMessage.EncryptMessage.parseFrom(buffer);
           messageEventType = MessageEventType.ENCRYPT_MESSAGE;

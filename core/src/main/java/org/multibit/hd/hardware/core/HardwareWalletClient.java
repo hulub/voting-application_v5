@@ -424,6 +424,14 @@ public interface HardwareWalletClient extends Connectable {
    */
   Optional<MessageEvent> signMessage(int account, KeyChain.KeyPurpose keyPurpose, int index, byte[] message);
 
+  /* Ring Sign Message
+   * ... check documentation for signMessage
+   */
+  Optional<MessageEvent> ringSignMessage(List<byte[]> L, int n, int pi, byte[] message);
+  
+  /* Get Public Key 65 */
+  Optional<MessageEvent> getPublicKey65();
+
   /**
    * <p>Send the VERIFY_MESSAGE message to the device containing a signed message to verify.</p>
    * <p>Expected response events are:</p>

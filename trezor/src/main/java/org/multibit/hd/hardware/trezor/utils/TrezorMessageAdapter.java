@@ -418,4 +418,18 @@ public class TrezorMessageAdapter {
       source.getSignature().toByteArray()
     );
   }
+  
+  /* Public Key 65 */
+  public static PublicKey65 adaptPublicKey65(TrezorMessage.PublicKey65 source) {
+	  return new PublicKey65(source.getPublicKey().toByteArray());
+  }
+  
+  /* Message Ring Signature */
+  public static MessageRingSignature adaptMessageRingSignature(TrezorMessage.MessageRingSignature source) {
+	  return new MessageRingSignature(source.getC().toByteArray()
+			  						 ,source.getSList()
+			  						 ,source.getN()
+			  						 ,source.getYtDotX().toByteArray()
+			  						 ,source.getYtDotY().toByteArray());
+  }
 }

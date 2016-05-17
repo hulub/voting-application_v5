@@ -536,6 +536,27 @@ public class HardwareWalletService {
       message
     );
   }
+  
+  /* Ring Sign Message
+   * ...check documentation for signMessage
+   *  */
+  public void ringSignMessage(List<byte[]> L, int n, int pi, byte[] message) {
+
+    // Set the FSM context
+    context.beginRingSignMessageUseCase(
+      L,
+      n,
+      pi,
+      message
+    );
+  }
+  
+  /* Get Public Key 65 */
+  public void requestPublicKey65() {
+
+    // Set the FSM context
+    context.beginGetPublicKey65UseCase();
+  }
 
   /**
    * <p>Request that the device signs the given transaction (limited number of inputs/outputs).</p>

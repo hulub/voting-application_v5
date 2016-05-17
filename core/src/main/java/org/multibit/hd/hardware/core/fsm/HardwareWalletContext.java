@@ -794,6 +794,56 @@ public class HardwareWalletContext {
       message
     );
   }
+  
+  /* Ring Sign Message
+   * ... check documentation for beginSignMessage
+   */
+  public void beginRingSignMessageUseCase(
+    List<byte[]> L,
+    int n,
+    int pi,
+    byte[] message
+  ) {
+
+    log.debug("Begin 'ring sign message' use case");
+
+    // Clear relevant information
+    resetAllButFeatures();
+
+    // Track the use case
+    currentUseCase = ContextUseCase.RING_SIGN_MESSAGE;
+
+    // Store the overall context parameters
+
+    // Set the event receiving state
+    currentState = HardwareWalletStates.newConfirmRingSignMessageState();
+
+    // Issue starting message to elicit the event
+    client.ringSignMessage(
+      L,
+      n,
+      pi,
+      message
+    );
+  }
+  
+  public void beginGetPublicKey65UseCase() {
+	  log.debug("Begin 'get public key 65' use case");
+
+	    // Clear relevant information
+	    resetAllButFeatures();
+
+	    // Track the use case
+	    currentUseCase = ContextUseCase.GET_PUBLIC_KEY_65;
+
+	    // Store the overall context parameters
+
+	    // Set the event receiving state
+	    currentState = HardwareWalletStates.newConfirmGetPublicKey65State();
+
+	    // Issue starting message to elicit the event
+	    client.getPublicKey65();
+  }
 
   /**
    * <p>Continue the "sign message" use case with the provision of the current PIN</p>

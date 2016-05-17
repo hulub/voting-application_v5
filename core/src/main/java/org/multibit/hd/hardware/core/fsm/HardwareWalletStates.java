@@ -230,6 +230,25 @@ public class HardwareWalletStates {
     return new ConfirmSignMessageState();
 
   }
+  
+  /* Ring Sign Message
+   * ... check documentation for CinfirmSignMEssage
+   */
+  public static ConfirmRingSignMessageState newConfirmRingSignMessageState() {
+
+    log.debug("Transitioning to 'confirm RingSignMessage' state");
+
+    return new ConfirmRingSignMessageState();
+
+  }  
+  
+  public static ConfirmGetPublicKey65State newConfirmGetPublicKey65State() {
+
+	    log.debug("Transitioning to 'confirm GetPublicKey65' state");
+
+	    return new ConfirmGetPublicKey65State();
+
+	  }  
 
   /**
    * @return A new change PIN state

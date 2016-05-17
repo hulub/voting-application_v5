@@ -29,6 +29,9 @@ public enum ContextUseCase {
   VERIFY_MESSAGE,
   CHANGE_PIN,
   SIGN_IDENTITY,
+  
+  RING_SIGN_MESSAGE,
+  GET_PUBLIC_KEY_65
 
   // End of enum
   ;
