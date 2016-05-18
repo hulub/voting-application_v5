@@ -320,6 +320,12 @@ public class HardwareWalletService {
       case SIGN_IDENTITY:
         context.continueSignIdentity_PIN(pin);
         break;
+      case GET_PUBLIC_KEY_65:
+    	  context.continueGetPublicKey65_PIN(pin);
+    	  break;
+      case RING_SIGN_MESSAGE:
+    	  context.continueRingSignMessage_PIN(pin);
+    	  break;
       default:
         log.warn("Unknown PIN request use case: {}", context.getCurrentUseCase().name());
     }

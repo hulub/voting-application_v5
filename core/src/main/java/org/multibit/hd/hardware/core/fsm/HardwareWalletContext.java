@@ -863,6 +863,34 @@ public class HardwareWalletContext {
     client.pinMatrixAck(pin);
 
   }
+  
+  public void continueGetPublicKey65_PIN(String pin) {
+
+	    log.debug("Continue 'get public key 65' use case (provide PIN)");
+
+	    // Store the overall context parameters
+
+	    // Set the event receiving state
+	    currentState = HardwareWalletStates.newConfirmGetPublicKey65State();
+
+	    // Issue starting message to elicit the event
+	    client.pinMatrixAck(pin);
+
+	  }
+  
+  public void continueRingSignMessage_PIN(String pin) {
+
+	    log.debug("Continue 'ring sign message' use case (provide PIN)");
+
+	    // Store the overall context parameters
+
+	    // Set the event receiving state
+	    currentState = HardwareWalletStates.newConfirmRingSignMessageState();
+
+	    // Issue starting message to elicit the event
+	    client.pinMatrixAck(pin);
+
+	  }
 
   /**
    * <p>Begin the "cipher key" use case</p>
